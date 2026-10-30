@@ -8,7 +8,7 @@ import { dirname, join } from "node:path";
 
 import {
   company, families, services, industries, differentiators, milestones, faqs,
-  clients, proof,
+  clients, proof, certifications,
 } from "./data.mjs";
 import {
   page, header, footer, logo, icons, artFor, art, productCard, ctaBand,
@@ -934,6 +934,28 @@ ${pageHead({
         ].map((t) => `<li>${icons.check}<span>${t}</span></li>`).join("")}
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- ==================== certifications ==================== -->
+<section class="section" id="certifications">
+  <div class="wrap">
+    ${sectionHead({ eyebrow: "Certifications", title: "Certified quality and safety", center: true })}
+    <div class="certs mt-8">
+      ${certifications.map((c, i) => `
+      <a class="cert" href="${c.file}" target="_blank" rel="noopener" data-reveal data-delay="${i + 1}">
+        <span class="cert__img"><img src="assets/img/${c.img}" alt="${c.std} certificate — ${c.body}" loading="lazy"></span>
+        <span class="cert__info">
+          <span class="cert__std">${c.std}</span>
+          <strong>${c.title}</strong>
+          <span class="cert__meta">Certified by ${c.body}</span>
+          <span class="cert__meta">Certificate No. ${c.no}</span>
+          <span class="cert__meta">${[c.since, c.valid].filter(Boolean).join(" · ")}</span>
+          <span class="link-arrow mt-4">View certificate ${icons.arrow}</span>
+        </span>
+      </a>`).join("")}
+    </div>
+    <p class="certs__scope" data-reveal>Scope: Manufacture, Supply &amp; Service of Oil Purification Machines</p>
   </div>
 </section>
 

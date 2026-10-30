@@ -1779,3 +1779,28 @@ families[5].layout = {
     { name: "ECR® 10000", text: "Integrated skid for EHC fluids — ICB FRF ion-exchange filters, ECR collectors, fine particulate filtration and TMR N₂ water removal in one system." },
   ],
 };
+
+
+/* Certifications — supplied by Ferrocare (Oct 2026) */
+export const certifications = [
+  {
+    std: "ISO 9001:2015",
+    title: "Quality Management System",
+    body: "TÜV AUSTRIA",
+    no: "20100163000906",
+    since: "Certified since 2004",
+    valid: "Valid until 10 Jan 2028",
+    img: "certs/iso-9001.jpg",
+    file: "assets/docs/iso-9001-2015-tuv-austria.pdf",
+  },
+  {
+    std: "ISO 45001:2018",
+    title: "Occupational Health & Safety Management System",
+    body: "DeFacto Veritas Certification",
+    no: "CIND24.334727MSR",
+    since: "Certified since 2024",
+    valid: "",
+    img: "certs/iso-45001.jpg",
+    file: "assets/docs/iso-45001-2018-dfvc.jpg",
+  },
+];
