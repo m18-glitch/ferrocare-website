@@ -1065,9 +1065,9 @@ ${ctaBand({
 const faqPage = () => {
   const body = `
 ${pageHead({
-  eyebrow: "Questions",
-  title: "The things engineers ask us first",
-  lead: "Electrostatic cleaning, dehydration, filtration sizing and oil testing — the questions that come up before a machine is specified.",
+  eyebrow: "FAQs",
+  title: "Frequently Asked Questions",
+  lead: "",
   crumbs: [{ label: "FAQ" }],
 })}
 
@@ -1077,11 +1077,11 @@ ${pageHead({
       ${faqs.map((f, i) => `
         <div class="acc__item" data-reveal>
           <button class="acc__btn" aria-expanded="false" aria-controls="faqp${i}">
-            <span>${f.q}</span>
+            <span><span class="acc__num">${String(i + 1).padStart(2, "0")}</span>${f.q}</span>
             <span class="acc__ico">${icons.plus}</span>
           </button>
           <div class="acc__panel" id="faqp${i}" role="region">
-            <div>${f.a}</div>
+            <div class="acc__body">${f.a}</div>
           </div>
         </div>`).join("")}
     </div>
@@ -1092,11 +1092,6 @@ ${pageHead({
   </div>
 </section>
 
-${ctaBand({
-  eyebrow: "Enquiry",
-  title: "Ask us something specific.",
-  body: "Model numbers, sizing, compatibility with a particular fluid, lead times, export documentation — send it across and we will answer it directly.",
-})}
 `;
   return page({
     title: "FAQ — Electrostatic Cleaning, Dehydration & Filtration Questions | Ferrocare",

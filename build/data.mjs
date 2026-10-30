@@ -1412,46 +1412,80 @@ export const milestones = [
 /* ==========================================================================
    FAQ
    ========================================================================== */
+const P = (...xs) => xs.map((x) => `<p>${x}</p>`).join("");
+const L = (...xs) => `<ul>${xs.map((x) => `<li>${x}</li>`).join("")}</ul>`;
 export const faqs = [
   {
-    q: "What is the difference between electrostatic cleaning and normal filtration?",
-    a: "Mechanical filters capture particles larger than their pore rating and hold them in an element that loads up. Electrostatic cleaning applies a high-voltage field across stainless-steel electrodes, so every suspended particle — metallic or not — migrates to an electrode and is collected on dielectric media. That reaches 1 micron and below, and it also removes sludge and varnish, which a filter does not register as particles at all. The two work best together: the electrostatic machine removes the fine contaminants, so the machine's own fine filters last far longer.",
+    q: "Why does oil get contaminated?",
+    a: P("Oil gets contaminated by:") + L("Particles entering the oil", "Thermal degradation forming polymer products, resinous matter and sludge") +
+       P("Sources for particles to enter the oil are:") +
+       L("Initial load when the system is assembled — like dust and debris in pipes, reservoirs, and the first fill of oil itself (from barrels at NAS 10–12)",
+         "From breathers, since systems are air compensated",
+         "Wear particles from moving parts — fine metal, rubber",
+         "Repair of parts and break-in of systems for replacement of parts, filters, seals etc.") +
+       P("Oil undergoes a thermal cycle, where local temperatures at the work may rise to 60 °C and it is later cooled in heat exchangers. This leads to polymerisation, especially in the presence of catalysts like fine metal particles and moisture. Moisture and wear particles both contribute to degradation of oil, measured as the Total Acid Number."),
   },
   {
-    q: "How do I size an ELC unit for my reservoir?",
-    a: "Ferrocare publishes a selection guide that rates each model by the maximum litres of oil it maintains at a given ISO viscosity grade — because a heavier oil is harder to clean. An ELC 50 C maintains 12,000 litres of VG 32 oil but only 3,000 litres of VG 100. The ELC R 600 handles 1,20,000 litres at VG 32. For NAS 7 or better cleanliness, derate the rated quantity by 50 %. Larger reservoirs are served by recirculation rather than a single pass.",
+    q: "Why does machine breakdown occur?",
+    a: P("Breakdown can be due to:") +
+       L("Increased clearances between mating parts (due to wear).",
+         "Blocked oil passages, especially at bends, valves and orifices.",
+         "Clogged filters leading to cavitation (suction side), pressure and flow surges (pressure side) and consequent vibration and jerky operation.",
+         "High acid value leading to corrosion and degradation of rubber parts."),
   },
   {
-    q: "How dry can the LVDH range make my oil?",
-    a: "Final water content of 10–20 ppm depending on model and duty. Under vacuum, water boils below 53 °C, so moisture flashes off without burn-off or additive depletion. A single pass reduces water content by 0.25–1.5 %, and recirculation takes it to zero free water or 50 % below saturation. The range runs from the LVDH-600 at 8–10 L/min to the LVDH-6000 at 80–100 L/min.",
+    q: "Why does oil leak?",
+    a: P("We have discussed above how contaminants like wear particles are generated and contribute to increasing formation of sludge and resinous matter.",
+         "Sludge, being acidic, attacks and reduces the life of oil seals. Sludge has an electrochemical attraction to metal surfaces and will deposit on oil coolers, reducing heat transfer efficiency. This hard scale is just the same persistent grime in ovens and pans (like the blackening of a pan or tawa). This leads to increased operating temperature, reduced viscosity and consequently higher leakage.",
+         "It is generally thought that oil leakage is independent of oil contamination. Our studies prove that leakage is mainly due to oil contamination, with sludge being the prime contributor."),
   },
   {
-    q: "Will cleaning the oil damage its additives?",
-    a: "No. Electrostatic collection is a physical process — there is no chemical reaction with the oil. Vacuum dehydration is deliberately operated at low temperature under reduced pressure precisely so that moisture boils off without thermally stressing the additive package. This is why reclaimed oil is returned to service rather than replaced.",
+    q: "Why does oil temperature increase?",
+    a: P("Generally, 10–15% of electrical energy input from motors gets converted to heat energy.",
+         "This percentage can increase when contamination increases, say by increased pumping energy required to push oil through choked filters. When suction side filters are choked, there is pump cavitation and aeration. Pumping energy is still higher as suction pressure drops while final pressures still have to be maintained. Moreover, aeration contributes to an effect known as “dieseling” whereby oil ignites at the high pressure side when air is available.",
+         "This leads to build-up of oxidation products, like sludge. Sludge in turn deposits on heat exchange surfaces on oil coolers, reducing heat transfer and increasing operating temperatures on both oil and water sides. Higher water temperatures lead to increased scaling on the water side… and a chain reaction is set in place.",
+         "Running machines at oil temperature between 43 °C – 48 °C is important. The focus has hitherto been to keep oil “cool”. It is however pertinent to understand what “cool” implies. Below 43 °C is too cool and above 48 °C is too hot.",
+         "It is also important to note that oil oxidation (i.e. sludge formation) is accelerated when temperature exceeds 50 °C. Salt release from water (leading to scale formation) is also accelerated when temperature exceeds 50 °C.",
+         "<strong>Therefore, keeping oil temperature below 50 °C is critical.</strong>"),
   },
   {
-    q: "What if my oil is both dirty and wet?",
-    a: "That is the normal case, and it is what the I-Series is for. The integrated units run the oil through the electrostatic collector first and then into the vacuum chamber, so particles, sludge, varnish, free water and dissolved moisture all come out in one circulation. The I-600, I-900 and I-2100 cover 8–10, 13–15 and 30–35 litres per minute, with automatic moisture, NAS and ISO readout on a self-diagnostic touchscreen.",
+    q: "Why is oil change necessary?",
+    a: P("Oil change is necessary when oil condition, indicated by turbidity or blackening, worsens enough to cause operating problems like sticky movement, hunting, slow pressure build-up, high leakages etc.",
+         "The need for oil change can also be dictated by oil analysis reports when periodic testing is done. If parameters like acid value and solid content exceed limits set by the oil supplier, the oil has to be changed.",
+         "Accidental ingress of water can also necessitate oil change, as a water–oil mixture cannot support hydrodynamic loads and prevent metal-to-metal contact at moving / meshing parts.",
+         "Use of our Vacuum Dehydration equipment <a href=\"product-low-vacuum-dehydration.html\">LVDH-600</a> is the method which can perform water removal online.",
+         "Use of <a href=\"product-electrostatic-liquid-cleaners.html\">ELC</a> to remove solids and oxidation products can prolong intervals between oil changes. In fact, if ELC is dedicated to a system and oil condition is monitored with membrane patches or particle counts, oil life can be prolonged indefinitely and oil becomes an asset rather than a consumable."),
   },
   {
-    q: "Can you clean the oil without us buying a machine?",
-    a: "Yes. Ferrocare provides on-site oil cleaning and dehydration as a service. Our engineers bring the machine to your reservoir, run the process, take cleanliness readings before and after, and leave you with documented evidence of the improvement. On-site patch testing and reporting is available too. It suits commissioning, post-repair work and shutdown windows.",
+    q: "Why is oil change necessary in spite of using mechanical filters? (Filters and centrifuges)",
+    a: P("Both filters and centrifuges have a limitation that they cannot adequately remove smaller particles. Yet it is contaminants below 5 microns, known as “silt”, which are most harmful to the system. Smaller particles alone can enter the clearances in mating parts and have the capacity to increase erosive wear and also catalyse oxidation.",
+         "Silt particles exist in much larger numbers and over time, as these particles remain in the oil, they contribute significantly to build-up of sludge and resinous matter and act as catalysts to increase the acid number of the oil.",
+         "These oxidation products are the main cause of:") +
+       L("Sticking of hydraulic valves", "Wear and breakdown of pumps, cylinders", "Increased seal failures", "Increased wear on mating parts, causing heavy leakages") +
+       P("Therefore, as oil gets more contaminated and oxidised we have to change the oil… only a few dozen parts per million of oxidised matter and contaminants can dictate the need to change oil.",
+         "<strong>Only electrostatic cleaning removes fine particles, the cause of sludge formation, and also the oxidised matter.</strong> Oil cannot be maintained with mechanical filtration at the level necessary to prevent costly oil change and downtime."),
   },
   {
-    q: "Which oils can be handled?",
-    a: "Hydraulic oil, gear oil, turbine oil, lube oil, compressor oil, water-glycol fire-resistant fluid, phosphate-ester and FRF. The electrostatic cleaners are specified for mineral base oils other than IC engine oil, with a special specification available for synthetics. Water-glycol, phosphate-ester and EHC fluids need their own units — the water-glycol unit runs at 75 LPM and 16 bar, and the EPT Canada system holds acid number below 0.2 mg KOH/g.",
+    q: "What is oil deterioration?",
+    a: P("An analysis of “deteriorated” oil proves that when oil is contaminated, its physical characteristics are not changed. Only a tiny percentage of oil molecules chemically react in the oxidation process and produce a resinous matter, which is generally referred to as “sludge”. (Mud in water indicates that water is contaminated; it does not however alter the basic molecular structure of water.)",
+         "Oil is said to have deteriorated when a few dozen PPM of resinous matter exist in the oil. A relatively high acid value is measured in such oil, and resinous matter of light brown colour is deposited on a 0.8-micron membrane patch when oil is checked by the membrane analysis method. Resinous matter is soluble in oil at temperatures higher than 60 °C and remains insoluble at temperatures lower than 60 °C. Resinous matter is also measured as benzene insoluble.",
+         "This resinous matter or sludge passes through filters when its concentration is small but clogs filters when its concentration increases. This is deteriorated oil — and it affects the hydraulic system because sludge is sticky in nature and is easily deposited on metallic surfaces of valves, oil coolers and pipes, leading to malfunctions or sticky valves, increased machine working temperatures, oxidation of oil, and decrease in viscosity."),
   },
   {
-    q: "How do I know the oil actually needs cleaning?",
-    a: "Measure it. Ferrocare supplies online particle counters rated to 400 bar, portable cleanliness monitors, digital imaging analysers that classify wear-particle shape from 4 µm, and inline moisture sensors that can auto-start a dehydrator. A particle count and an ISO 4406 code tell you whether the oil is out of specification; repeated readings tell you whether your filtration programme is working.",
-  },
-  {
-    q: "Do you build custom systems?",
-    a: "That is most of what we do. Flow rate, viscosity, contamination load, fluid chemistry, mounting format, construction material and level of automation are all engineered per application. Standard models are the starting point for sizing, not a constraint on the result.",
-  },
-  {
-    q: "Where are you located and how do I reach you?",
-    a: "The corporate office and works are at S. No. 32/3/8, Yewlewadi Road, Kondhwa Budruk, Pune – 411048, Maharashtra, India. Call +91 20 4603 3076 or +91 96079 74281, or email info@ferrocare.com. Office hours are 8:30 am to 6:30 pm Monday to Friday, and 8:30 am to 2:00 pm on Saturday.",
+    q: "What are the properties of oils used in hydraulics and lubrication?",
+    a: P("Hydraulics is based on Pascal's Law applied to liquids. Lubrication is based on separation of moving / meshing parts by an oil film. Oil is used only for transmission of energy and lubrication of mating parts.",
+         "The basic property of oil that is exploited for use in hydraulic and lubrication systems is its <strong>viscosity</strong>. Viscosity of the oil permits the build-up of a thin load-bearing film of oil between moving parts, preventing metal-to-metal contact.",
+         "Viscosity of oil is temperature dependent and the standard of measurement is at 40 °C. This value is used in design of systems, and using oil at temperatures far above or far below 40 °C are both “off design” situations.",
+         "<strong>The other properties required to be monitored are:</strong>") +
+       L("Total Acid Number", "Contaminants", "Moisture") +
+       P("<strong>Acid number</strong> is a measure of the oxidation the oil has undergone.",
+         "<strong>Contaminants</strong> in oil are measured by:") +
+       L("<strong>Particle counting:</strong> This equipment automatically counts and records the number of particles in oil by electronic sensors. It cannot read contaminants below 5 microns in size, is expensive and requires trained personnel for operation.",
+         "<strong>Membrane filter:</strong> This method is very reliable and contaminants in oil can be observed by the naked eye. Membrane patches of oils to be checked can be compared with standard patches. If required, membranes can be weighed before and after the oil sample is passed to arrive at the weight of contaminants in a given oil sample. 0.8-micron membranes are used for oil analysis by this method. This equipment is inexpensive, easy to operate and is portable.",
+         "<strong>Turbidity measurement:</strong> The turbidity of an oil sample is measured by an electric meter and compared with that of standard purity. This instrument is very easy to operate and is inexpensive.") +
+       P("<a href=\"product-electrostatic-liquid-cleaners.html\">ELC</a> is the best method of contamination control, removing all particles as well as oxidation products.",
+         "<strong>Moisture</strong> must generally be controlled within a couple of hundred ppm, preferably within the saturation limit of the oil. Moisture is harmful by itself, causing breakdown of the oil film at the minimum and corrosion at higher values. It is also a catalyst for oxidation of the oil. Moisture is the biggest enemy of oil, especially emulsified water.",
+         "Our <a href=\"product-low-vacuum-dehydration.html\">LVDH 600</a> is the best method of online moisture removal, and can reduce moisture content to below the saturation limit without taking the oil to high temperatures."),
   },
 ];
 
