@@ -308,7 +308,6 @@ const NAV = [
     { href: "international-piston-pumps.html", label: "Piston Pumps", desc: "Nachi, Japan" },
     { href: "international-nachi-steels.html", label: "Nachi – Japan Special Steels", desc: "High speed & special steels" },
   ] },
-  { href: "faq.html", label: "FAQs" },
   { href: "contact.html", label: "Contact" },
 ];
 
@@ -344,7 +343,7 @@ export const header = (current = "") => {
       ${NAV.map((n) =>
         n.mega
           ? `<div class="has-drop">
-               <a class="nav__link drop-toggle" href="${n.href}" ${current === n.href ? 'aria-current="page"' : ""}>
+               <a class="nav__link drop-toggle" href="${n.href}" ${current === n.href || (n.mega && (current === "faq.html" || current.startsWith("product-"))) ? 'aria-current="page"' : ""}>
                  ${n.label} ${icons.chevron}
                </a>
                <div class="dropdown" role="menu" aria-label="Product families">
@@ -352,8 +351,8 @@ export const header = (current = "") => {
                    ${PRODUCTS_FOR_NAV.map(productLink).join("")}
                  </div>
                  <div class="dropdown__foot">
-                   <span>${PRODUCTS_FOR_NAV.length} families · ${PRODUCTS_FOR_NAV.reduce((a, f) => a + f.models.length, 0)} machine configurations</span>
-                   <a class="link-arrow" href="products.html">Full catalogue ${icons.arrow}</a>
+                   <a class="dropdown__faq" href="faq.html"><span class="dropdown__ico">${icons.file}</span><span><span class="dropdown__label">FAQs</span><span class="dropdown__desc">Oil contamination, ELC &amp; LVDH explained</span></span></a>
+                   <a class="link-arrow" href="products.html">All products ${icons.arrow}</a>
                  </div>
                </div>
              </div>`
@@ -382,6 +381,7 @@ export const header = (current = "") => {
     <div class="drawer__group">
       <p class="drawer__title">Product families</p>
       ${PRODUCTS_FOR_NAV.map((f) => `<a class="drawer__link" style="font-size:1.05rem" href="product-${f.slug}.html">${f.short}</a>`).join("")}
+      <a class="drawer__link" style="font-size:1.05rem" href="faq.html">FAQs</a>
     </div>
     <div class="drawer__contact">
       <p class="drawer__title">Reach us</p>

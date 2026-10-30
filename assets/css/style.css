@@ -2473,3 +2473,8 @@ main > section.clients-strip + section { margin-top: 0; }
 .acc__body li::before { content: ""; position: absolute; left: .2rem; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--copper-500); }
 .acc__body a { color: var(--copper-500); text-decoration: underline; text-underline-offset: 3px; }
 .acc__body strong { color: var(--ink-900); }
+.dropdown__faq { display: inline-flex; align-items: center; gap: .7rem; padding: .35rem .6rem .35rem .35rem; border-radius: var(--r-md); transition: background .2s; }
+.dropdown__faq:hover { background: var(--copper-050); }
+.dropdown__faq .dropdown__label, .dropdown__faq .dropdown__desc { display: block; }
+.dropdown__faq .dropdown__label { font-weight: 600; color: var(--ink-900); }
+.dropdown__grid .dropdown__label, .dropdown__grid .dropdown__desc { display: block; } .dropdown__grid .dropdown__desc { margin-top: .1rem; }
