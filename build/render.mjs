@@ -308,6 +308,7 @@ const NAV = [
     { href: "international-piston-pumps.html", label: "Piston Pumps", desc: "Nachi, Japan" },
     { href: "international-nachi-steels.html", label: "Nachi – Japan Special Steels", desc: "High speed & special steels" },
   ] },
+  { href: "faq.html", label: "FAQs" },
   { href: "contact.html", label: "Contact" },
 ];
 
