@@ -369,9 +369,6 @@ export const header = (current = "") => {
           : `<a class="nav__link" href="${n.href}" ${current === n.href ? 'aria-current="page"' : ""}>${n.label}</a>`
       ).join("")}
     </nav>
-    <div class="header__cta">
-      <a class="btn btn--primary btn--sm" href="contact.html">Request a quote ${icons.arrow}</a>
-    </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
       <span></span><span></span><span></span>
     </button>
@@ -392,7 +389,7 @@ export const header = (current = "") => {
       <a href="mailto:${contact.email}">${contact.email}</a>
       <p class="mt-4">${contact.addressLines.join("<br>")}</p>
       <div class="btn-row mt-5">
-        <a class="btn btn--primary" href="contact.html">Request a quote</a>
+        <a class="btn btn--primary" href="contact.html">Contact us</a>
         <a class="btn btn--ghost" href="products.html">Browse products</a>
       </div>
     </div>
