@@ -2539,3 +2539,4 @@ main > section.clients-strip + section { margin-top: 0; }
 .ctab__table { width: 100%; table-layout: fixed; } .ctab__table th, .ctab__table td { width: auto !important; text-align: center !important; padding: .7rem .5rem !important; } .ctab__table th { font-size: var(--t-xs); }
 .intl__pioneer { max-width: 60ch; padding: 1rem 1.25rem; border-left: 4px solid var(--copper-500); background: var(--copper-050); border-radius: var(--r-md); font-size: var(--t-lead); color: var(--ink-800); font-weight: 500; }
 #feedbackForm { background: #fff; }
+.phero__sub { margin-top: .6rem; font-family: var(--font-display); font-style: italic; font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); line-height: 1.2; color: var(--copper-500); }

@@ -359,6 +359,7 @@ const productLayout = (f, L) => `
       <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="products.html">Products</a><span>/</span><span>${f.short}</span></nav>
       <span class="eyebrow">${L.label}</span>
       <h1 class="mt-4">${L.heading || f.name}</h1>
+      ${L.subheading ? `<p class="phero__sub">${L.subheading}</p>` : ""}
       ${L.intro.map((p, i) => `<p class="lead mt-${i ? 4 : 5}">${p}</p>`).join("")}
       <div class="btn-row mt-7">
         ${L.catalogue ? `<a class="btn btn--primary btn--lg" href="${L.catalogue}" target="_blank" rel="noopener">${L.catalogueLabel || "Download Catalogue"} ${icons.arrow}</a>` : ""}

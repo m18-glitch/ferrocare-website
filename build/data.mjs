@@ -1792,7 +1792,8 @@ families[4].layout = {
 /* EPT page — summarised from the EPT Clean Oil brochure supplied by Ferrocare (Oct 2026) */
 families[5].name = "EPT Machines";
 families[5].layout = {
-  label: "From Cleanoil, Canada — for Phosphate Ester",
+  label: "Lubricant Chemistry Management",
+  subheading: "from Cleanoil, Canada — for Phosphate Ester",
   intro: [
     "From the first day a lubricant is put into service, it begins to chemically break down — forming acids and varnish that filters cannot remove.",
     "EPT systems use patented ion-exchange technology to remove these breakdown products continuously, managing the chemistry of turbine, compressor, hydraulic and EHC fluids — not just the particles.",
