@@ -586,7 +586,9 @@ ${L.tabs.map((t, i) => `
     <div class="wrap phero__grid">
       <div class="phero__text">
         <h2 class="ptab-panel__title">${t.name}</h2>
+        ${t.tagline ? `<p class="ptab-panel__tag">${t.tagline}</p>` : ""}
         ${t.intro.map((p, j) => `<p class="lead mt-${j ? 4 : 5}">${p}</p>`).join("")}
+        ${t.specs ? `<dl class="pspecs mt-6">${t.specs.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>` : ""}
         ${t.options ? `<ol class="popts mt-6">${t.options.map((o, j) => `<li><span class="popts__l">${"ABCD"[j]}</span><span>${o}</span></li>`).join("")}</ol>` : ""}
       </div>
       ${t.img || t.images ? `<div class="pgal pgal--white" data-gal>
@@ -599,6 +601,22 @@ ${L.tabs.map((t, i) => `
       </div>` : ""}
     </div>
   </section>
+  ${t.table ? `
+  <section class="section section--tight kstats-band">
+    <div class="wrap ctab">
+      <div>
+        <h3 class="ctab__title">${t.table.title}</h3>
+        <div class="table-scroll mt-5">
+          <table class="spec-table ctab__table">
+            <thead><tr>${t.table.cols.map((c) => `<th scope="col">${c}</th>`).join("")}</tr></thead>
+            <tbody>${t.table.rows.map((r) => `<tr class="${r[2] === "exists" ? "is-wet" : ""}">${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody>
+          </table>
+        </div>
+        <ol class="ctab__notes">${t.table.notes.map((n) => `<li>${n}</li>`).join("")}</ol>
+      </div>
+      <p class="ctab__cap">${t.table.caption}</p>
+    </div>
+  </section>` : ""}
   ${t.keyStats ? `
   <section class="section section--tight kstats-band">
     <div class="wrap">

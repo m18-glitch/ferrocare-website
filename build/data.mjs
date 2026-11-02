@@ -1754,7 +1754,32 @@ families[4].layout = {
     {
       key: "moisture-sensor",
       name: "Moisture in Oil Sensor",
+      tagline: "Moisture in Oil — Detect it, Measure it, Remove it!",
+      specs: [
+        ["Displays", "Moisture level in ppm or AW (saturation level)"],
+        ["Principle of operation", "Capacitance"],
+        ["Interface", "4–20 mA / Modbus"],
+      ],
+      table: {
+        title: "Function of catalysts",
+        cols: ["Test", "Catalysts (Metal)", "Water", "Time (Hrs)", "Acid Value"],
+        rows: [
+          ["1", "nil", "nil", "3,500", "0.17"],
+          ["2", "nil", "exists", "3,500", "0.90"],
+          ["3", "iron", "nil", "6,500", "0.65"],
+          ["4", "iron", "exists", "400", "8.10"],
+          ["5", "copper", "nil", "3,000", "0.89"],
+          ["6", "copper", "exists", "100", "11.20"],
+        ],
+        notes: [
+          "Time: hours for reaching a certain level of acid value.",
+          "Test oil is of 32cSt / 100 °F (40 °C).",
+          "Tested oil temperature is 200 °F (93 °C).",
+        ],
+        caption: "Acid value indicates formation of “sludge” and sticky resinous matter which forms hard deposits on valves, pipes.",
+      },
       intro: [
+        "An accurate & simple solution to detect moisture in oil.",
         "Water is the biggest enemy of hydraulic & lubricating oils — even bigger than particulate contamination.",
         "There is a clear nexus between presence of moisture and acid / sludge formation in oil. With the moisture sensor, users get a quick, accurate & simple way to detect moisture in oil in PPM (parts per million).",
         "Keeping moisture level in oil below the saturation point helps increase oil life and protects the system.",
