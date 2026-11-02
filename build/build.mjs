@@ -88,7 +88,7 @@ function selectorLookup() {
   const g = {
     hydraulic: {
       particles: [match(ELC, "Sub-micron collection without disturbing the additive package — the standard answer for hydraulic systems running servo valves.", ["1 µ & below", "ELC series"])],
-      water:     [match(LVDH, "Free and emulsified water removed under vacuum to 10–20 ppm, with no thermal stress on the oil.", ["10–20 ppm", "LVDH series"])],
+      water:     [match(LVDH, "Free and emulsified water removed under vacuum to 150–200 ppm, with no thermal stress on the oil.", ["150–200 ppm", "LVDH series"])],
       varnish:   [match(ELC, "Varnish and sludge are collected on the dielectric media — mechanical filters pass them straight through.", ["Varnish removal", "ELC series"])],
       bulk:      [match(MAG, "Rare-earth magnets pull out ferrous wear debris with no consumables, ahead of fine cleaning.", ["8× ferrite", "No consumables"]), match(ELC, "Then electrostatic cleaning takes the oil down to 1 micron.", ["1 µ & below"])],
       unknown:   [match(TEST, "Measure first. Particle counts and moisture readings decide whether the oil is cleaned or replaced.", ["ISO 4406", "OPCOM"])],

@@ -280,7 +280,7 @@ const allFamilies = [
     series: "LVDH Series",
     group: "oil",
     tagline: "100 % free water and emulsified moisture, removed",
-    chips: ["10–20 ppm final water", "Boils water below 53 °C", "Refrigerated condenser"],
+    chips: ["150–200 ppm final water", "Boils water below 53 °C", "Refrigerated condenser"],
     summary:
       "Vacuum, heat and mass transfer working together. The LVDH range pulls free water, dissolved moisture and entrained gases out of hydraulic, gear, turbine and lube oils — so oil returns to specification instead of being replaced.",
     technology:
@@ -806,8 +806,8 @@ const allFamilies = [
     short: "Gearbox Oil Filtration",
     series: "GB / MS6 DHU",
     group: "filtration",
-    tagline: "Attach to the gearbox, lift the carbon out",
-    chips: ["Direct gearbox coupling", "3,000 LPH", "No dismantling"],
+    tagline: "Attach to the gearbox, lift the metal out",
+    chips: ["3,000 LPH", "No dismantling"],
     summary:
       "A dedicated system that couples straight onto gearbox housings and works the oil continuously. Carbon deposits and wear debris that settle in the sump are drawn out rather than left to recirculate through the bearings.",
     technology:
