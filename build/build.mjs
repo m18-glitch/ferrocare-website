@@ -575,7 +575,7 @@ const productTabs = (f, L) => `
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="products.html">Products</a><span>/</span><span>${f.short}</span></nav>
     <h1 data-reveal>${f.name}</h1>
     <div class="ptabs" role="tablist" aria-label="${f.name}" data-reveal data-delay="1">
-      ${L.tabs.map((t, i) => `<button class="ptabs__btn${i ? "" : " is-on"}" role="tab" id="tab-${t.key}" aria-controls="panel-${t.key}" aria-selected="${!i}" data-tab="${t.key}"><span class="ptabs__thumb"><img src="assets/img/${t.img}" alt=""></span>${t.name}</button>`).join("")}
+      ${L.tabs.map((t, i) => `<button class="ptabs__btn${i ? "" : " is-on"}" role="tab" id="tab-${t.key}" aria-controls="panel-${t.key}" aria-selected="${!i}" data-tab="${t.key}"><span class="ptabs__thumb">${t.img ? `<img src="assets/img/${t.img}" alt="">` : PICON.dots}</span>${t.name}</button>`).join("")}
     </div>
   </div>
 </section>
@@ -587,15 +587,16 @@ ${L.tabs.map((t, i) => `
       <div class="phero__text">
         <h2 class="ptab-panel__title">${t.name}</h2>
         ${t.intro.map((p, j) => `<p class="lead mt-${j ? 4 : 5}">${p}</p>`).join("")}
+        ${t.options ? `<ol class="popts mt-6">${t.options.map((o, j) => `<li><span class="popts__l">${"ABCD"[j]}</span><span>${o}</span></li>`).join("")}</ol>` : ""}
       </div>
-      <div class="pgal pgal--white" data-gal>
+      ${t.img || t.images ? `<div class="pgal pgal--white" data-gal>
         <div class="pgal__main">
           ${(t.images || [{ img: t.img, caption: t.name }]).map((im, j) => `<img class="pgal__img${j ? "" : " is-on"}" data-i="${j}" src="assets/img/${im.img}" alt="${t.name} — ${im.caption}" decoding="async">`).join("")}
         </div>
         ${t.images && t.images.length > 1 ? `<div class="pgal__thumbs">
           ${t.images.map((im, j) => `<button class="pgal__thumb${j ? "" : " is-on"}" data-i="${j}" aria-label="${im.caption}"><img src="assets/img/${im.img}" alt=""></button>`).join("")}
         </div>` : ""}
-      </div>
+      </div>` : ""}
     </div>
   </section>
   ${t.keyStats ? `
@@ -1037,8 +1038,8 @@ ${pageHead({
 
 ${ctaBand({
   eyebrow: "Services",
-  title: "Stop changing oil. Start cleaning it.",
-  body: "Clean oil lasts longer and protects your machines. Tell us about your oil and equipment — our engineers will recommend the right service or machine.",
+  title: "Stop changing oil.",
+  body: "<strong>Eliminate the need to change it, by keeping it superclean all the time.</strong><br>Tell us about your oil and equipment — our engineers will recommend the right service or machine.",
   primary: { href: "contact.html", label: "Discuss a requirement" },
   secondary: { href: "faq.html", label: "Read the FAQ" },
 })}

@@ -1681,6 +1681,7 @@ families[2].layout = {
     { icon: "clock", title: "Reduces gearbox downtime", text: "Keeps your system clean and running longer." },
     { icon: "drop", title: "Extends oil drain intervals", text: "Improves oil cleanliness and life." },
     { icon: "shield", title: "Improves reliability", text: "Enhances performance and protects equipment." },
+    { icon: "bolt", title: "Stable power consumption", text: "Ensures stable power consumption." },
   ],
   applications: ["Industrial Gearboxes", "Steel Plants", "Rolling Mills", "Mining Equipment", "Cement Plants", "Heavy Duty Gear Drives"],
   flowRange: { label: "Available models:", value: "20 to 400 LPM", note: "For detailed model selection and specifications, download the brochure." },
@@ -1689,7 +1690,8 @@ families[2].layout = {
 /* Magnetic Separator page — content supplied by Ferrocare (Oct 2026) */
 families[3].name = "Magnetix Separator";
 families[3].layout = {
-  label: "Revolutionizing fluid separation with rare-earth magnetic technology",
+  label: "Revolutionizing fluid separation with rare-earth magnet technology",
+  heading: "Magnetix",
   intro: [
     "Harnessing the power of rare-earth magnets, our Magnetic Separator offers up to 8 times the magnetic force of conventional ferrite magnets, setting a new standard in fluid separation technology.",
   ],
@@ -1711,10 +1713,14 @@ families[4].layout = {
   tabs: [
     {
       key: "particle-counter",
-      name: "Particle Counter",
+      name: "Laser Particle Counters",
       intro: [
-        "Introducing the Particle Counter, a precision instrument designed to detect and analyse particles in oils, liquids and systems.",
-        "It helps maintain cleanliness, improves system performance and extends equipment life.",
+        "A precision instrument designed to detect and analyse particles in oils, liquids and systems.",
+      ],
+      options: [
+        "In a handy battery-operated carry case, to check purity directly on the machine, with print-out, plus transfer of data to your cellphone / email.",
+        "Install directly on your machines, with online display / connect via RS232 / 485 interface.",
+        "Install on our ELC equipment.",
       ],
       img: "oiltest/pc-opcom-hd.webp",
       images: [
@@ -1729,13 +1735,21 @@ families[4].layout = {
       ],
       keyFeatures: [
         "Oil cleanliness codes: ISO 4406, NAS 1638, & SAE AS4059",
-        "Particles are grouped by micron size in seven categories — 4, 6, 14, 21, 38, 70, >100µ",
-        "The S120 counts air and gas bubbles and eliminates them from the counts",
         "Highly accurate sensor capable of self-calibration",
         "Full integration with SCADA/PC/PLC which can be controlled via analogue or digital instrumentation",
+      ],
+    },
+    {
+      key: "digital-particle-counter",
+      name: "Digital Particle Counter",
+      intro: [
+        "Digital imaging particle counter (S120) that counts and identifies wear particles in oil.",
+      ],
+      keyFeatures: [
+        "Particles are grouped by micron size in seven categories — 4, 6, 14, 21, 38, 70, >100µ",
+        "The S120 counts air and gas bubbles and eliminates them from the counts",
         "Wear particle identification as fatigue wear, sliding wear and cutting wear as well as fibres",
       ],
-      criteriaNote: "Particle size, oil type, required cleanliness level and application conditions.",
     },
     {
       key: "moisture-sensor",
@@ -1753,7 +1767,7 @@ families[4].layout = {
 /* EPT page — summarised from the EPT Clean Oil brochure supplied by Ferrocare (Oct 2026) */
 families[5].name = "EPT Machines";
 families[5].layout = {
-  label: "Lubricant Chemistry Management",
+  label: "From Cleanoil, Canada — for Phosphate Ester",
   intro: [
     "From the first day a lubricant is put into service, it begins to chemically break down — forming acids and varnish that filters cannot remove.",
     "EPT systems use patented ion-exchange technology to remove these breakdown products continuously, managing the chemistry of turbine, compressor, hydraulic and EHC fluids — not just the particles.",
@@ -1764,7 +1778,7 @@ families[5].layout = {
   keyStats: [
     { icon: "flask", title: "Removes acids & varnish", text: "Eliminates breakdown products and varnish precursors." },
     { icon: "shield", title: "Protects servo valves", text: "Prevents lubricant-related failures in critical systems." },
-    { icon: "drop", title: "Controls oxygen & water", text: "TMR N₂ removes 98% of oxygen and keeps water very low." },
+    { icon: "drop", title: "Prevents moisture ingress", text: "TMR N₂ blankets the oil reservoir with high-purity nitrogen." },
     { icon: "trend", title: "Extends fluid life", text: "Reduces failure costs and fluid replacement." },
   ],
   solutions: [
@@ -1776,7 +1790,7 @@ families[5].layout = {
   systems: [
     { name: "ICB®", text: "Patented ion-exchange element that continuously removes acids, varnish precursors and dissolved breakdown products." },
     { name: "SVR®", text: "Skid-mounted dialysis conditioning system that works 100% of the time, using ICB technology to remove acids and oxidation material as they form." },
-    { name: "TMR® N₂", text: "High-purity nitrogen generation system that removes 98% of the oxygen present and keeps water at very low levels in breathing reservoirs." },
+    { name: "TMR® N₂", text: "High-purity nitrogen generator, which blankets the oil reservoir and prevents moisture ingress." },
     { name: "ECR® 10000", text: "Integrated skid for EHC fluids — ICB FRF ion-exchange filters, ECR collectors, fine particulate filtration and TMR N₂ water removal in one system." },
   ],
 };
