@@ -321,12 +321,9 @@
     apply();
   }
 
-  /* ------------------------------------------------------- enquiry form */
-  const form = $("#enquiryForm");
-
-  /* Build a mailto: fallback so an enquiry is never lost if the relay is
-     unreachable — blocked network, ad-blocker, or the service being down. */
-  const mailtoFallback = (fields) => {
+  /* ------------------------------------------------------- relay forms */
+  // Every form with data-relay posts to the relay; success/error boxes are looked up inside it.
+  const mailtoFallback = (form, fields) => {
     const to = form.dataset.recipient || "info@ferrocare.com";
     const subject = form.dataset.subject || "Website enquiry";
     const body = Object.entries(fields)
@@ -336,32 +333,33 @@
     return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
-  if (form) {
-    const success = $("#formSuccess");
-    const error = $("#formError");
-    const errorDetail = $("#formErrorDetail");
-    const mailtoLink = $("#formMailto");
+  $$("form[data-relay]").forEach((form) => {
+    const success = $(".form__success", form);
+    const error = $(".form__error", form);
+    const errorDetail = $("[data-err-detail]", form);
+    const mailtoLink = $("[data-mailto]", form);
     const submitBtn = $('button[type="submit"]', form);
-    const originalLabel = submitBtn ? submitBtn.innerHTML : "Send enquiry";
+    const originalLabel = submitBtn ? submitBtn.innerHTML : "Send";
 
-    // Carry the page and any presets into the payload
     const pageField = $('input[name="page"]', form);
     if (pageField) pageField.value = window.location.pathname + window.location.search;
 
-    const preset = new URLSearchParams(window.location.search);
-    const presetWhat = preset.get("product") || preset.get("service");
-    if (presetWhat) {
-      const msg = $("#f-msg");
-      const interest = $("#f-interest");
-      if (msg && !msg.value) {
-        msg.value = `I would like a quotation for: ${presetWhat}.\n\nFluid type / viscosity:\nReservoir volume (L):\nRequired flow rate or treatment time:\nContamination observed:`;
+    if (form.id === "enquiryForm") {
+      const preset = new URLSearchParams(window.location.search);
+      const presetWhat = preset.get("product") || preset.get("service");
+      if (presetWhat) {
+        const msg = $("#f-msg");
+        const interest = $("#f-interest");
+        if (msg && !msg.value) {
+          msg.value = `I would like a quotation for: ${presetWhat}.\n\nFluid type / viscosity:\nReservoir volume (L):\nRequired flow rate or treatment time:\nContamination observed:`;
+        }
+        if (interest) {
+          const hit = Array.from(interest.options)
+            .find((o) => presetWhat.toLowerCase().includes(o.text.toLowerCase().split(" ")[0]));
+          if (hit) interest.value = hit.value;
+        }
+        window.setTimeout(() => $("#f-name")?.focus({ preventScroll: true }), 400);
       }
-      if (interest) {
-        const hit = Array.from(interest.options)
-          .find((o) => presetWhat.toLowerCase().includes(o.text.toLowerCase().split(" ")[0]));
-        if (hit) interest.value = hit.value;
-      }
-      window.setTimeout(() => $("#f-name")?.focus({ preventScroll: true }), 400);
     }
 
     const setBusy = (busy) => {
@@ -369,9 +367,7 @@
       submitBtn.disabled = busy;
       submitBtn.style.opacity = busy ? ".7" : "";
       submitBtn.style.cursor = busy ? "progress" : "";
-      submitBtn.innerHTML = busy
-        ? "Sending…"
-        : originalLabel;
+      submitBtn.innerHTML = busy ? "Sending…" : originalLabel;
     };
 
     form.addEventListener("submit", async (e) => {
@@ -379,7 +375,6 @@
       if (success) success.hidden = true;
       if (error) error.hidden = true;
 
-      // Honeypot — a filled hidden field means a bot. Silently accept and drop.
       const honey = $('input[name="_honey"]', form);
       if (honey && honey.value.trim()) {
         if (success) success.hidden = false;
@@ -415,14 +410,13 @@
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const payload = await res.json().catch(() => ({}));
         if (payload && payload.success === "false") throw new Error("relay rejected");
-
         form.reset();
         if (success) {
           success.hidden = false;
           success.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
         }
       } catch (err) {
-        if (mailtoLink) mailtoLink.href = mailtoFallback(data);
+        if (mailtoLink) mailtoLink.href = mailtoFallback(form, data);
         if (errorDetail) {
           errorDetail.textContent =
             "The form service could not be reached from this network. Use the button below and your email app will open with everything already filled in.";
@@ -435,5 +429,5 @@
         setBusy(false);
       }
     });
-  }
+  });
 })();

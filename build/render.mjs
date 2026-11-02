@@ -453,7 +453,7 @@ export const footer = () => {
           <a href="tel:${contact.phoneHref}">${contact.phoneDisplay}</a>
           <a href="mailto:${contact.email}">${contact.email}</a>
           <span style="color:var(--ink-400)">${contact.addressLines.join("<br>")}</span>
-          <span style="color:var(--ink-400)">Mon–Fri 8:30–18:30<br>Sat 8:30–14:00</span>
+          <span style="color:var(--ink-400)">Mon–Fri 8:30–18:00<br>Sat 8:30–14:00</span>
         </div>
       </div>
     </div>

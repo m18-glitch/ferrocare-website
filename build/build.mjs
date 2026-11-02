@@ -1140,7 +1140,7 @@ ${pageHead({
     </div>
     <div class="note mt-8" data-reveal>
       ${icons.phone}
-      <div>Still unanswered? Call <a href="tel:${contact.phoneHref}" style="text-decoration:underline">${contact.phoneDisplay}</a> or email <a href="mailto:${contact.email}" style="text-decoration:underline">${contact.email}</a>. Office hours are 8:30 am to 6:30 pm Monday to Friday, and 8:30 am to 2:00 pm Saturday.</div>
+      <div>Still unanswered? Call <a href="tel:${contact.phoneHref}" style="text-decoration:underline">${contact.phoneDisplay}</a> or email <a href="mailto:${contact.email}" style="text-decoration:underline">${contact.email}</a>. Office hours are 8:30 am to 6:00 pm Monday to Friday, and 8:30 am to 2:00 pm Saturday.</div>
     </div>
   </div>
 </section>
@@ -1225,7 +1225,7 @@ ${pageHead({
     </div>
 
     <div data-reveal data-delay="2">
-      <form class="form" id="enquiryForm" novalidate
+      <form class="form" id="enquiryForm" data-relay novalidate
               action="${FORM.endpoint}" method="POST"
               data-mode="${FORM.mode}"
               data-recipient="${FORM.recipient}"
@@ -1310,8 +1310,8 @@ ${pageHead({
 
         <div class="form__error" id="formError" role="alert" hidden>
           <strong>That did not send.</strong>
-          <span id="formErrorDetail">Please try again, or email us directly.</span>
-          <a class="btn btn--ghost btn--sm mt-4" id="formMailto" href="#">Open in your email app instead</a>
+          <span id="formErrorDetail" data-err-detail>Please try again, or email us directly.</span>
+          <a class="btn btn--ghost btn--sm mt-4" id="formMailto" data-mailto href="#">Open in your email app instead</a>
         </div>
 
         <p class="form__note">
@@ -1323,12 +1323,101 @@ ${pageHead({
   </div>
 </section>
 
+<!-- ==================== feedback form ==================== -->
+<section class="section" id="feedback">
+  <div class="wrap wrap--narrow">
+    <form class="form" id="feedbackForm" data-relay novalidate
+          action="${FORM.endpoint}" method="POST"
+          data-mode="${FORM.mode}"
+          data-recipient="${FORM.recipient}"
+          data-subject="Website feedback form — Ferrocare Machines" data-reveal>
+      <h3 style="font-size:var(--t-h4)">Feedback form</h3>
+      <p class="muted mt-3" style="font-size:var(--t-sm)">Share these details about your plant and oil, and our engineers will recommend the right solution.</p>
+      <input type="hidden" name="_subject" value="Website feedback form — Ferrocare Machines">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="page" value="">
+      <div class="hp" aria-hidden="true">
+        <label for="fb-website">Leave this field empty</label>
+        <input id="fb-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="field-row mt-6">
+        <div class="field">
+          <label for="fb-name">Name <span class="req">*</span></label>
+          <input id="fb-name" name="name" type="text" required autocomplete="name" placeholder="Your full name">
+        </div>
+        <div class="field" style="margin-top:0">
+          <label for="fb-company">Company <span class="req">*</span></label>
+          <input id="fb-company" name="company" type="text" required autocomplete="organization" placeholder="Organisation">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="fb-email">Email <span class="req">*</span></label>
+          <input id="fb-email" name="email" type="email" required autocomplete="email" placeholder="name@company.com">
+        </div>
+        <div class="field" style="margin-top:0">
+          <label for="fb-phone">Phone</label>
+          <input id="fb-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="fb-machine">Machine name &amp; model</label>
+          <input id="fb-machine" name="machine_name_model" type="text">
+        </div>
+        <div class="field" style="margin-top:0">
+          <label for="fb-oil">Oil grade &amp; volume</label>
+          <input id="fb-oil" name="oil_grade_volume" type="text" placeholder="e.g. ISO VG 46, 3,000 L">
+        </div>
+      </div>
+      <div class="field">
+        <label for="fb-filters">Details of filters installed</label>
+        <input id="fb-filters" name="filters_installed" type="text">
+      </div>
+      <div class="field">
+        <label for="fb-machines">Total number of machines in your plant, with oil grade &amp; volume in each</label>
+        <textarea id="fb-machines" name="machines_in_plant" rows="3"></textarea>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="fb-interval">Oil change interval</label>
+          <input id="fb-interval" name="oil_change_interval" type="text" placeholder="e.g. every 12 months">
+        </div>
+        <div class="field" style="margin-top:0">
+          <label for="fb-topup">Oil top-up</label>
+          <input id="fb-topup" name="oil_top_up" type="text" placeholder="e.g. 200 L per month">
+        </div>
+      </div>
+      <div class="field">
+        <label for="fb-purchase">Total oil purchase per year</label>
+        <input id="fb-purchase" name="oil_purchase_per_year" type="text" placeholder="e.g. 10,000 L">
+      </div>
+
+      <div class="btn-row mt-6">
+        <button class="btn btn--primary btn--lg" type="submit">Send feedback form ${icons.arrow}</button>
+      </div>
+      <div class="form__success" role="status" hidden>
+        <strong>Thank you — your details have been sent.</strong><br>
+        Our engineers will review them and get back to you.
+      </div>
+      <div class="form__error" role="alert" hidden>
+        <strong>That did not send.</strong>
+        <span data-err-detail>Please try again, or email us directly.</span>
+        <a class="btn btn--ghost btn--sm mt-4" data-mailto href="#">Open in your email app instead</a>
+      </div>
+    </form>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap">
     ${sectionHead({
       eyebrow: "Finding us",
       title: "Kondhwa Budruk, Pune",
-      lead: "The works and corporate office sit in the Danny Mehata Nagar industrial area of Kondhwa Budruk, in south-east Pune — roughly 12 km from Pune city centre and within reach of the Pune–Satara road industrial belt.",
+      lead: "The works and corporate office sit in the Danny Mehata Nagar industrial area of Kondhwa Budruk, in south-east Pune — roughly 12 km from Pune city centre and 4 km from Katraj Chowk.",
       center: true,
     })}
     <div class="mt-8" data-reveal>
@@ -1383,7 +1472,7 @@ const INTL_ABOUT = {
   intro: "NACHI - FUJIKOSHI CORP. is one of Japan's most respected manufacturers of High Speed Steels, Special Steels, Alloy Steel, Cutting Tools, Hydraulic Equipment, Bearings and Machines with an employee strength exceeding 3,000 and Turnover exceeding US$ 1 billion & manufacturing facilities in Japan, Taiwan, Brazil, Spain and the USA. NACHI has pioneered and patented a process of continuous heat treatment of steel bars.",
   blocks: [
     { icon: "factory", lead: "Conventional methods like salt bath and vacuum no longer meet the demands of:", items: ["Pollution control", "Congenial work environment", "No deformation", "Labour cost reduction", "Consistent quality."] },
-    { icon: "award", lead: "NACHI is the first company in the world to offer:", items: ["Hardened High Speed Steels from 0.3 mm dia. rounds and flats in 2000 mm lengths in M2 / M35 / M42 & ASP grades.", "Hardened Stainless Steels from 1mm to 13mm dia. in SUS420JS Grade.", "Carbide wires … including the thinnest … 0.04mm dia."] },
+    { icon: "award", lead: "NACHI is the first company in the world to offer:", items: ["Hardened High Speed Steels from 0.3 mm dia. rounds and flats in 2000 mm lengths in M2 / M35 / M42 & ASP grades.", "Carbide wires … including the thinnest … 0.04mm dia."] },
     { icon: "wrench", lead: "Applications include:", items: ["Cutting tools, piercing punches, ejector pins, knives.", "Vanes for hydraulic vane pumps and rotary refrigeration compressors.", "Surgical drills for hardened SS materials.", "Dot pins of dot matrix print heads, EDM Wires for Carbide wires."] },
   ],
 };
@@ -1398,6 +1487,7 @@ const intlAbout = () => page({
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Ferrocare International</span></nav>
     <span class="eyebrow mt-5">Ferrocare International</span>
     <h1 class="intl__h1">${INTL_ABOUT.title}</h1>
+    <p class="intl__pioneer mt-5">The international pioneer manufacturer of hardened high speed steel from 0.2 to 16 mm dia. in M2 / M35 / M42 and powder metal grades.</p>
     <p class="lead mt-6 intl__lead">${INTL_ABOUT.intro}</p>
   </div>
 </section>

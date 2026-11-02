@@ -39,7 +39,7 @@ export const company = {
     email: "info@ferrocare.com",
     emailAlt: "sales@ferrocare.com",
     hours: [
-      ["Monday – Friday", "8:30 am – 6:30 pm"],
+      ["Monday – Friday", "8:30 am – 6:00 pm"],
       ["Saturday", "8:30 am – 2:00 pm"],
       ["Sunday", "Closed"],
     ],

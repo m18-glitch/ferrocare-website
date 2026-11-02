@@ -202,7 +202,7 @@
             <h4>Office hours</h4>
             <table class="spec-table">
               <tbody>
-                <tr><th style="width:auto;padding-right:var(--s-5)">Monday – Friday</th><td>8:30 am – 6:30 pm</td></tr><tr><th style="width:auto;padding-right:var(--s-5)">Saturday</th><td>8:30 am – 2:00 pm</td></tr><tr><th style="width:auto;padding-right:var(--s-5)">Sunday</th><td>Closed</td></tr>
+                <tr><th style="width:auto;padding-right:var(--s-5)">Monday – Friday</th><td>8:30 am – 6:00 pm</td></tr><tr><th style="width:auto;padding-right:var(--s-5)">Saturday</th><td>8:30 am – 2:00 pm</td></tr><tr><th style="width:auto;padding-right:var(--s-5)">Sunday</th><td>Closed</td></tr>
               </tbody>
             </table>
           </div>
@@ -225,7 +225,7 @@
     </div>
 
     <div data-reveal data-delay="2">
-      <form class="form" id="enquiryForm" novalidate
+      <form class="form" id="enquiryForm" data-relay novalidate
               action="https://formsubmit.co/ajax/info@ferrocare.com" method="POST"
               data-mode="formsubmit"
               data-recipient="info@ferrocare.com"
@@ -310,8 +310,8 @@
 
         <div class="form__error" id="formError" role="alert" hidden>
           <strong>That did not send.</strong>
-          <span id="formErrorDetail">Please try again, or email us directly.</span>
-          <a class="btn btn--ghost btn--sm mt-4" id="formMailto" href="#">Open in your email app instead</a>
+          <span id="formErrorDetail" data-err-detail>Please try again, or email us directly.</span>
+          <a class="btn btn--ghost btn--sm mt-4" id="formMailto" data-mailto href="#">Open in your email app instead</a>
         </div>
 
         <p class="form__note">
@@ -323,13 +323,102 @@
   </div>
 </section>
 
+<!-- ==================== feedback form ==================== -->
+<section class="section" id="feedback">
+  <div class="wrap wrap--narrow">
+    <form class="form" id="feedbackForm" data-relay novalidate
+          action="https://formsubmit.co/ajax/info@ferrocare.com" method="POST"
+          data-mode="formsubmit"
+          data-recipient="info@ferrocare.com"
+          data-subject="Website feedback form — Ferrocare Machines" data-reveal>
+      <h3 style="font-size:var(--t-h4)">Feedback form</h3>
+      <p class="muted mt-3" style="font-size:var(--t-sm)">Share these details about your plant and oil, and our engineers will recommend the right solution.</p>
+      <input type="hidden" name="_subject" value="Website feedback form — Ferrocare Machines">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="page" value="">
+      <div class="hp" aria-hidden="true">
+        <label for="fb-website">Leave this field empty</label>
+        <input id="fb-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="field-row mt-6">
+        <div class="field">
+          <label for="fb-name">Name <span class="req">*</span></label>
+          <input id="fb-name" name="name" type="text" required autocomplete="name" placeholder="Your full name">
+        </div>
+        <div class="field" style="margin-top:0">
+          <label for="fb-company">Company <span class="req">*</span></label>
+          <input id="fb-company" name="company" type="text" required autocomplete="organization" placeholder="Organisation">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="fb-email">Email <span class="req">*</span></label>
+          <input id="fb-email" name="email" type="email" required autocomplete="email" placeholder="name@company.com">
+        </div>
+        <div class="field" style="margin-top:0">
+          <label for="fb-phone">Phone</label>
+          <input id="fb-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="fb-machine">Machine name &amp; model</label>
+          <input id="fb-machine" name="machine_name_model" type="text">
+        </div>
+        <div class="field" style="margin-top:0">
+          <label for="fb-oil">Oil grade &amp; volume</label>
+          <input id="fb-oil" name="oil_grade_volume" type="text" placeholder="e.g. ISO VG 46, 3,000 L">
+        </div>
+      </div>
+      <div class="field">
+        <label for="fb-filters">Details of filters installed</label>
+        <input id="fb-filters" name="filters_installed" type="text">
+      </div>
+      <div class="field">
+        <label for="fb-machines">Total number of machines in your plant, with oil grade &amp; volume in each</label>
+        <textarea id="fb-machines" name="machines_in_plant" rows="3"></textarea>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="fb-interval">Oil change interval</label>
+          <input id="fb-interval" name="oil_change_interval" type="text" placeholder="e.g. every 12 months">
+        </div>
+        <div class="field" style="margin-top:0">
+          <label for="fb-topup">Oil top-up</label>
+          <input id="fb-topup" name="oil_top_up" type="text" placeholder="e.g. 200 L per month">
+        </div>
+      </div>
+      <div class="field">
+        <label for="fb-purchase">Total oil purchase per year</label>
+        <input id="fb-purchase" name="oil_purchase_per_year" type="text" placeholder="e.g. 10,000 L">
+      </div>
+
+      <div class="btn-row mt-6">
+        <button class="btn btn--primary btn--lg" type="submit">Send feedback form <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="form__success" role="status" hidden>
+        <strong>Thank you — your details have been sent.</strong><br>
+        Our engineers will review them and get back to you.
+      </div>
+      <div class="form__error" role="alert" hidden>
+        <strong>That did not send.</strong>
+        <span data-err-detail>Please try again, or email us directly.</span>
+        <a class="btn btn--ghost btn--sm mt-4" data-mailto href="#">Open in your email app instead</a>
+      </div>
+    </form>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap">
     
 <div class="section-head section-head--center" data-reveal>
   <span class="eyebrow">Finding us</span>
   <h2>Kondhwa Budruk, Pune</h2>
-  <p class="lead">The works and corporate office sit in the Danny Mehata Nagar industrial area of Kondhwa Budruk, in south-east Pune — roughly 12 km from Pune city centre and within reach of the Pune–Satara road industrial belt.</p>
+  <p class="lead">The works and corporate office sit in the Danny Mehata Nagar industrial area of Kondhwa Budruk, in south-east Pune — roughly 12 km from Pune city centre and 4 km from Katraj Chowk.</p>
 </div>
     <div class="mt-8" data-reveal>
       <a class="split__media" style="display:block;text-decoration:none;min-height:280px"
@@ -416,7 +505,7 @@
           <a href="tel:+912046033076">+91 20 4603 3076</a>
           <a href="mailto:info@ferrocare.com">info@ferrocare.com</a>
           <span style="color:var(--ink-400)">S. No. 32/3/8, Yewlewadi Road,<br>Kondhwa Budruk, Pune – 411048<br>Maharashtra, India</span>
-          <span style="color:var(--ink-400)">Mon–Fri 8:30–18:30<br>Sat 8:30–14:00</span>
+          <span style="color:var(--ink-400)">Mon–Fri 8:30–18:00<br>Sat 8:30–14:00</span>
         </div>
       </div>
     </div>
