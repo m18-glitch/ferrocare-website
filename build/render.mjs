@@ -330,7 +330,7 @@ export const header = (current = "") => {
       <a class="topbar__item" href="tel:${contact.phoneHref}">${icons.phone}${contact.phoneDisplay}</a>
     </div>
     <div class="topbar__list topbar__list--secondary">
-      <span class="topbar__badge"><span class="topbar__dot"></span>Manufacturer &amp; Exporter since 1980</span>
+      <span class="topbar__badge"><span class="topbar__dot"></span>Manufacturer &amp; Exporter since 1992</span>
       <span class="topbar__item">${icons.star} ${contact.rating.score} / 5 on Google</span>
     </div>
   </div>
@@ -418,7 +418,7 @@ export const footer = () => {
         <p class="footer__about">
           Manufacturer and exporter of electrostatic liquid cleaning equipment,
           low vacuum dehydration machines, oil filtration systems and condition
-          monitoring instruments. Engineering cleaner oil since 1980.
+          monitoring instruments. Engineering cleaner oil since 1992.
         </p>
         <div class="footer__socials">
           <a class="footer__social" href="${company.web.primary}" aria-label="Ferrocare website">${icons.globe}</a>
@@ -651,8 +651,8 @@ export const timeline = (items) => `
   </ol>
   <div class="tl__cap" data-tl>
     <span class="tl__cap-dot"></span>
-    <strong>1980 &rarr; today</strong>
-    <span>Four decades, one problem: oil that degrades before it needs to.</span>
+    <strong>1992 &rarr; today</strong>
+    <span>Three decades, one problem: oil that degrades before it needs to.</span>
   </div>
 </div>`;
 

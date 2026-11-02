@@ -155,7 +155,7 @@ const home = () => {
           <a class="btn btn--ghost btn--lg" href="contact.html">Talk to an engineer</a>
         </div>
         <div class="hero__trust" data-reveal data-delay="4">
-          <div class="hero__trust-item"><strong>45+</strong><span>Years engineering oil</span></div>
+          <div class="hero__trust-item"><strong>34+</strong><span>Years engineering oil</span></div>
           <div class="hero__trust-item"><strong>${families.length}</strong><span>Product lines</span></div>
           <div class="hero__trust-item"><strong>${MODEL_COUNT}</strong><span>Documented models</span></div>
           <div class="hero__trust-item"><strong>1 µ</strong><span>And below, electrostatically</span></div>
@@ -241,7 +241,7 @@ ${ctaBand({
   return page({
     title: "Ferrocare Machines Pvt. Ltd. — Oil Filtration, Electrostatic Cleaning & Dehydration | Pune",
     description:
-      "Ferrocare Machines Private Limited, Pune — manufacturer and exporter of electrostatic liquid cleaners, low vacuum dehydration machines, hydraulic oil filtration systems, coolant filtration and condition monitoring instruments since 1980.",
+      "Ferrocare Machines Private Limited, Pune — manufacturer and exporter of electrostatic liquid cleaners, low vacuum dehydration machines, hydraulic oil filtration systems, coolant filtration and condition monitoring instruments since 1992.",
     current: "index.html",
     canonical: canon("index.html"),
     body,
@@ -887,9 +887,9 @@ ${f.layout ? `<section class="section section--tight">
 const about = () => {
   const body = `
 ${pageHead({
-  eyebrow: "Since 1980",
-  title: "Four decades of taking contamination out of oil",
-  lead: `Ferrocare Machines Private Limited is a Pune-based manufacturer and exporter of oil purification and filtration equipment. Incorporated in 1980, the company builds electrostatic liquid cleaners, low vacuum dehydration machines, filtration systems and condition monitoring instruments — and exports them from India.`,
+  eyebrow: "Since 1992",
+  title: "Over three decades of taking contamination out of oil",
+  lead: `Ferrocare Machines Private Limited is a Pune-based manufacturer and exporter of oil purification and filtration equipment. Established in 1992, the company builds electrostatic liquid cleaners, low vacuum dehydration machines, filtration systems and condition monitoring instruments — and exports them from India.`,
   crumbs: [{ label: "Company" }],
 })}
 
@@ -901,14 +901,14 @@ ${pageHead({
         <span class="eyebrow">Who we are</span>
         <h2 class="mt-4">An engineering company that happens to sell machines</h2>
         <p class="lead mt-5">
-          Ferrocare was set up in Pune in 1980 to solve a specific industrial problem:
+          Ferrocare was set up in Pune in 1992 to solve a specific industrial problem:
           hydraulic and lubricating oil that degrades long before it needs to be. The
           answer the company settled on — electrostatic collection — is still the
           technology at the centre of the range, and still the reason customers return.
-          Still the best technology, four decades on.
+          Still the best technology, three decades on.
         </p>
         <p class="lead mt-5">
-          Over four decades the range widened to cover the rest of that problem. Water
+          Over three decades the range widened to cover the rest of that problem. Water
           needed vacuum dehydration. Bulk solids needed mechanical filtration. And proving any of it worked needed instruments.
           Today the company builds across all of those disciplines, so a recommendation
           is made against your oil rather than against a product list.
@@ -928,12 +928,12 @@ ${pageHead({
 <!-- ==================== journey (compact) ==================== -->
 <section class="section">
   <div class="wrap">
-    ${sectionHead({ eyebrow: "Our journey", title: "From 1980 to today", center: true })}
+    ${sectionHead({ eyebrow: "Our journey", title: "From 1992 to today", center: true })}
     <ol class="journey mt-8" data-reveal>
       ${[
-        ["1980", "Incorporated in Pune", "Ferrocare Machines Pvt. Ltd. set up as a manufacturer of oil purification equipment."],
-        ["1980s", "Kleentek licence", "Manufacturing under licence from Kleentek of Japan; offices in Mumbai, Delhi, Daman, Bangalore."],
-        ["1990s", "ELC range scales up", "Electrostatic liquid cleaners grow into a full range — 1,000+ units across India."],
+        ["1992", "Established in Pune", "Ferrocare Machines Pvt. Ltd. set up as a manufacturer of oil purification equipment."],
+        ["1990s", "Kleentek licence", "Manufacturing under licence from Kleentek of Japan; offices in Mumbai, Delhi, Daman, Bangalore."],
+        ["Late 1990s", "ELC range scales up", "Electrostatic liquid cleaners grow into a full range — 1,000+ units across India."],
         ["2000s", "Vacuum dehydration", "LVDH machines for turbine, gear and hydraulic oil; EPT Canada chemistry for phosphate esters."],
         ["2010s", "Instrumentation", "Particle counters, moisture sensors and test kits to prove the oil is clean."],
         ["Today", "IoT & integrated", "MODBUS-ready controls and combined ELC + LVDH systems."],
@@ -1001,9 +1001,9 @@ ${ctaBand({
 })}
 `;
   return page({
-    title: "Company — About Ferrocare Machines Pvt. Ltd., Pune | Established 1980",
+    title: "Company — About Ferrocare Machines Pvt. Ltd., Pune | Established 1992",
     description:
-      "Ferrocare Machines Private Limited — incorporated in Pune in 1980, manufacturer and exporter of electrostatic liquid cleaners, low vacuum dehydration machines, oil filtration systems and condition monitoring instruments.",
+      "Ferrocare Machines Private Limited — established in Pune in 1992, manufacturer and exporter of electrostatic liquid cleaners, low vacuum dehydration machines, oil filtration systems and condition monitoring instruments.",
     current: "about.html",
     canonical: canon("about.html"),
     body,

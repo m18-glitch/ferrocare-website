@@ -18,7 +18,7 @@ export const company = {
     cin: "U29299MH1980PTC022218",
     gst: "27AAACF3571A1Z3",
     iec: "0388082992",
-    founded: "1980",
+    founded: "1992",
     nature: "Manufacturer & Exporter",
     employees: "26–50 people",
     turnover: "₹25–100 Cr",
@@ -75,7 +75,7 @@ export const company = {
 export const proof = [
   { value: "1,000+", label: "ELC units installed in India" },
   { value: "25,000+", label: "Kleentek ELC units worldwide" },
-  { value: "1980", label: "Manufacturing since" },
+  { value: "1992", label: "Manufacturing since" },
   { value: "6,000", label: "Sq ft works, Pune" },
 ];
 
