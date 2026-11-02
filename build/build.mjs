@@ -342,6 +342,7 @@ const PICON = {
   bubbles: LI(`<circle cx="20" cy="20" r="8"/><circle cx="31" cy="30" r="5"/><circle cx="17" cy="35" r="2.5"/>`),
   touch: LI(`<path d="M16 16a11 11 0 0 1 16 0M12 12a16 16 0 0 1 24 0"/><rect x="18" y="22" width="12" height="18" rx="6"/><path d="M24 26v4"/>`),
   flask: LI(`<path d="M19 6h10M21 6v12L10 38a3 3 0 0 0 3 4h22a3 3 0 0 0 3-4L27 18V6"/><path d="M15 30h18"/>`),
+  bolt: LI(`<path d="M27 5 12 27h11l-3 16 16-23H25Z"/>`),
   nofire: LI(`<path d="M24 8c3 6 9 9 9 17a9 9 0 0 1-18 0c0-5 3-8 4-11 2 3 3 4 5 5 0-4-1-7 0-11Z"/><path d="m10 10 28 28"/>`),
   therm: LI(`<path d="M21 8a3 3 0 0 1 6 0v18a8 8 0 1 1-6 0Z"/><path d="M24 20v10"/><circle cx="24" cy="33" r="3" fill="currentColor"/><path d="M32 12h5M32 17h3"/>`),
   shield: LI(`<path d="M24 6 38 11v11c0 9-6 16-14 20-8-4-14-11-14-20V11Z"/><path d="m18 24 5 5 8-9"/>`),
@@ -415,6 +416,17 @@ ${L.criteria ? `<section class="section">
 </section>
 
 ` : ""}
+${L.cleanCool ? `
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="ccool" data-reveal>
+      <p class="ccool__lead">${L.cleanCool.lead}</p>
+      <div class="ccool__items">
+        ${L.cleanCool.items.map((it, i) => `<div class="ccool__item"><span class="ccool__letter">${"ABCD"[i]}</span><span class="ccool__ico">${PICON[it.icon]}</span><strong>${it.text}</strong></div>`).join("")}
+      </div>
+    </div>
+  </div>
+</section>` : ""}
 ${L.how ? `<section class="section how" id="technology">
   <div class="wrap how__grid">
     <div data-reveal>

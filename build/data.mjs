@@ -1594,7 +1594,7 @@ families[0].layout = {
   label: "Japanese Technology",
   intro: [
     "Electrostatic Liquid Cleaner removes sub-micron contaminants, varnish, sludge and even bacteria in service oils.",
-    "It improves oil quality, enhances system efficiency and extends oil life.",
+    "It maintains oil purity, enhances system efficiency and extends oil life.",
   ],
   views: [
     { img: "elc/elc-side.jpg", caption: "Side View" },
@@ -1602,8 +1602,8 @@ families[0].layout = {
   ],
   catalogue: "https://www.ferrocare.com/_files/ugd/46b5d6_c12bdc346a1345d3b53963f08af433cc.pdf",
   keyStats: [
-    { icon: "drop", title: "Removes", text: "contaminants up to 0.01 micron" },
-    { icon: "ban", title: "No filter", text: "replacement" },
+    { icon: "drop", title: "Removes", text: "contaminants < 1 micron" },
+    { icon: "shield", title: "No downtime", text: "No leakage" },
     { icon: "clock", title: "Extends oil life", text: "by 5 – 10 times" },
     { icon: "rupee", title: "Reduces", text: "maintenance cost" },
   ],
@@ -1662,7 +1662,7 @@ families[1].layout = {
   },
   applications: ["Hydraulic Oils", "Turbine Oils", "Compressor Oils", "Gear Oils", "Dehydration before blending different oils", "Vacuum Pump & Compressor Seal Oils"],
 };
-families[0].layout.badges = [{ k: "Removes", v: "0.01 µ" }, { k: "Oil life", v: "5–10×" }];
+families[0].layout.badges = [{ k: "Removes", v: "< 1 micron" }, { k: "Oil life", v: "5–10×" }];
 
 /* Gear Box page — content supplied by Ferrocare (Oct 2026) */
 families[2].name = "Gear Box Oil Filtration";
@@ -1809,3 +1809,14 @@ export const certifications = [
 families[4].tagline = "Measure the oil purity";
 families[4].chips = ["Online to 400 bar", "ISO 4406 & NAS codes", "Patch test kits"];
 families[5].img = "ept/ept-machine.jpg";
+
+/* ELC — clean & cool oil statement (Ferrocare, Nov 2026) */
+families[0].layout.cleanCool = {
+  lead: "Keeping oil clean and cool not only imparts indefinite life to oil —",
+  items: [
+    { icon: "shield", text: "No breakdown" },
+    { icon: "drop", text: "No leakage" },
+    { icon: "rupee", text: "No maintenance cost" },
+    { icon: "bolt", text: "Stable power consumption" },
+  ],
+};
