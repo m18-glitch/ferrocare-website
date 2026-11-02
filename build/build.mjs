@@ -143,12 +143,12 @@ const home = () => {
     <div class="hero__layout">
       <div>
         <div data-reveal>${ratingPill()}</div>
-        <h1 data-reveal data-delay="1">We keep industrial oil <em>clean enough to trust.</em></h1>
+        <h1 data-reveal data-delay="1">We keep industrial oils <em>clean enough to impart indefinite life.</em></h1>
         <p class="lead hero__lead" data-reveal data-delay="2">
           Ferrocare builds the machines that take contamination out of hydraulic, gear,
           turbine and lube oil — electrostatic cleaners that reach below one micron,
-          vacuum dehydrators that pull water down to 10 ppm, and the instruments that
-          prove it worked. Manufacturing in Pune since 1980.
+          vacuum dehydrators that pull water down to 200 ppm, and the instruments that
+          prove it works. Manufacturing in Pune since 1992.
         </p>
         <div class="btn-row hero__actions" data-reveal data-delay="3">
           <a class="btn btn--primary btn--lg" href="products.html">Explore the range ${icons.arrow}</a>
@@ -175,7 +175,7 @@ const home = () => {
         </div>
         <div class="float-card float-card--b">
           <div class="float-card__k">Final water</div>
-          <div class="float-card__v">10 <small>ppm</small></div>
+          <div class="float-card__v">200 <small>ppm</small></div>
         </div>
         <div class="float-card float-card--c">
           <div class="float-card__k">Collection</div>
@@ -208,7 +208,7 @@ const home = () => {
       <p class="lead mt-5">
         Oil cleanliness is reported as an ISO 4406 code — three numbers counting
         particles above 4, 6 and 14 microns per millilitre. Lower is cleaner. A
-        hydraulic system running servo valves wants to be in the mid-teens; untreated
+        hydraulic system running with servo valves wants to be in the mid-teens; untreated
         oil sits in the low twenties.
       </p>
       <p class="lead mt-5">
@@ -218,7 +218,7 @@ const home = () => {
       </p>
       <ul class="checks mt-6">
         ${[
-          "ISO 4406 reported directly by OPCOM counters — no lab turnaround",
+          "ISO 4406 reported directly by online particle counters — no lab turnaround",
           "Electrostatic collection to 1 micron and below",
           "Sludge and varnish removed, which a particle count cannot see",
           "Cleanliness codes logged over time to show the trend, not a snapshot",
@@ -234,7 +234,9 @@ const home = () => {
   </div>
 </section>
 
-${ctaBand()}
+${ctaBand({
+  body: "Send us the fluid type, reservoir volume, flow rate and the contamination you are seeing. Our engineers will size a machine — or a service visit — against that data point.<br><br><strong>Ask us to check oil purity in your running machines, in your plant, in your presence — and judge for yourself. No lab turnaround.</strong>",
+})}
 `;
   return page({
     title: "Ferrocare Machines Pvt. Ltd. — Oil Filtration, Electrostatic Cleaning & Dehydration | Pune",
@@ -887,7 +889,7 @@ const about = () => {
 ${pageHead({
   eyebrow: "Since 1980",
   title: "Four decades of taking contamination out of oil",
-  lead: `Ferrocare Machines Private Limited is a Pune-based manufacturer and exporter of oil purification and filtration equipment. Incorporated in 1980, the company builds electrostatic liquid cleaners, low vacuum dehydration machines, filtration systems, coolant systems and condition monitoring instruments — and exports them from India.`,
+  lead: `Ferrocare Machines Private Limited is a Pune-based manufacturer and exporter of oil purification and filtration equipment. Incorporated in 1980, the company builds electrostatic liquid cleaners, low vacuum dehydration machines, filtration systems and condition monitoring instruments — and exports them from India.`,
   crumbs: [{ label: "Company" }],
 })}
 
@@ -903,11 +905,11 @@ ${pageHead({
           hydraulic and lubricating oil that degrades long before it needs to be. The
           answer the company settled on — electrostatic collection — is still the
           technology at the centre of the range, and still the reason customers return.
+          Still the best technology, four decades on.
         </p>
         <p class="lead mt-5">
           Over four decades the range widened to cover the rest of that problem. Water
-          needed vacuum dehydration. Bulk solids needed mechanical filtration. Grinding
-          cells needed coolant systems. And proving any of it worked needed instruments.
+          needed vacuum dehydration. Bulk solids needed mechanical filtration. And proving any of it worked needed instruments.
           Today the company builds across all of those disciplines, so a recommendation
           is made against your oil rather than against a product list.
         </p>
@@ -950,17 +952,17 @@ ${pageHead({
       <span class="eyebrow">The works</span>
       <h2 class="mt-4">Designed, built and tested in Kondhwa Budruk</h2>
       <p class="lead mt-5">
-        A 6,000 sq ft manufacturing premises in south-east Pune. Fabrication, assembly,
+        A 12,000 sq ft manufacturing facility in south-east Pune. Fabrication, assembly,
         wiring, panel building and performance testing all happen here — which is why
         a duty point that falls outside the catalogue is a conversation rather than a
         refusal.
       </p>
       <ul class="checks mt-6">
         ${[
-          "Skid, trolley and stationary formats in MS or SS",
+          "Skid and trolley formats",
           "EPT Canada acid-control chemistry for phosphate-ester fluids",
-          "IoT and MODBUS control on the R-series ELC range",
-          "Custom flow rate, viscosity and water-load sizing per application",
+          "IoT & Modbus control on the entire range",
+          "Custom flow rate and viscosity sizing per application",
           "Factory acceptance testing before dispatch",
         ].map((t) => `<li>${icons.check}<span>${t}</span></li>`).join("")}
       </ul>

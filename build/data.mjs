@@ -22,7 +22,7 @@ export const company = {
     nature: "Manufacturer & Exporter",
     employees: "26–50 people",
     turnover: "₹25–100 Cr",
-    premises: "6,000 sq ft works, Pune",
+    premises: "12,000 sq ft works, Pune",
   },
   contact: {
     addressLines: [

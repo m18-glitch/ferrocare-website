@@ -521,7 +521,7 @@ ${footer()}
 export const ctaBand = ({
   eyebrow = "Next step",
   title = "Tell us what your oil is doing wrong.",
-  body = "Send us the fluid type, reservoir volume, flow rate and the contamination you are seeing. Our engineers will size a machine — or a service visit — against that duty point.",
+  body = "Send us the fluid type, reservoir volume, flow rate and the contamination you are seeing. Our engineers will size a machine — or a service visit — against that data point.",
   primary = { href: "contact.html", label: "Request a quote" },
   secondary = { href: "products.html", label: "Browse the catalogue" },
 } = {}) => `
