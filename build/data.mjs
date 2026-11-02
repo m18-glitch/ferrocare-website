@@ -1793,10 +1793,10 @@ families[4].layout = {
 families[5].name = "EPT Machines";
 families[5].layout = {
   label: "Lubricant Chemistry Management",
-  subheading: "from Cleanoil, Canada — for Phosphate Ester",
+  heading: "Machines <em>from Cleanoil, Canada — for Phosphate Ester</em>",
   intro: [
     "From the first day a lubricant is put into service, it begins to chemically break down — forming acids and varnish that filters cannot remove.",
-    "EPT systems use patented ion-exchange technology to remove these breakdown products continuously, managing the chemistry of turbine, compressor, hydraulic and EHC fluids — not just the particles.",
+    "These systems use patented ion-exchange technology to remove these breakdown products continuously, managing the chemistry of turbine, compressor, hydraulic and EHC fluids — not just the particles.",
   ],
   views: [{ img: "ept/ept-machine.jpg", caption: "EPT Machine" }],
   catalogue: "assets/docs/ept-clean-oil-brochure.pdf",
