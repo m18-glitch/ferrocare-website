@@ -1614,7 +1614,7 @@ families[0].layout = {
     { icon: "servo", text: "Servo Valves" },
     { icon: "proportional", text: "Proportional" },
   ],
-  how: "Electrostatic charging causes sub-micron particles, water, varnish and bacteria to coalesce and get captured on the collector cell plates. The clean oil then returns to the system, resulting in improved performance and extended component life.",
+  how: "The electrostatic field enables all particulate matter — ferrous / non-ferrous, metallic / non-metallic, organic / inorganic, including virus and bacteria — to coalesce and deposit on collectors placed between the electrode plates.",
   steps: [
     { icon: "dirty", title: "Contaminated Oil", sub: "0.01 micron & above" },
     { icon: "charge", title: "Electrostatic Charging", sub: "& Coalescing" },
