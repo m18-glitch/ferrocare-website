@@ -290,7 +290,7 @@ ${pageHead({
     ${sectionHead({
       eyebrow: "Sizing tool",
       title: "Find your machine in two questions",
-      lead: "Pick the fluid you run and the contamination you are seeing. This is the short version of how a Ferrocare engineer narrows the range — the real sizing happens against your duty point.",
+      lead: "Pick the fluid you run and the contamination you are seeing. This is the short version of how a Ferrocare engineer narrows the range — the real sizing happens against your data point.",
       center: true,
     })}
     <div class="mt-8" data-reveal>

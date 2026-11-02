@@ -1804,3 +1804,8 @@ export const certifications = [
     file: "assets/docs/iso-45001-2018-dfvc.jpg",
   },
 ];
+
+/* Card edits — Ferrocare, Nov 2026 */
+families[4].tagline = "Measure the oil purity";
+families[4].chips = ["Online to 400 bar", "ISO 4406 & NAS codes", "Patch test kits"];
+families[5].img = "ept/ept-machine.jpg";
