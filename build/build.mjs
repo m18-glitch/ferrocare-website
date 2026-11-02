@@ -439,7 +439,7 @@ ${L.how ? `<section class="section how" id="technology">
       <div class="flow2__step flow2__step--${i}">
         <span class="flow2__ring"><span class="flow2__ico">${PICON[st.icon]}</span></span>
         <strong>${st.title}</strong>
-        <small>${st.sub}</small>
+        ${st.sub ? `<small>${st.sub}</small>` : ""}
       </div>`).join("")}
     </div>
   </div>

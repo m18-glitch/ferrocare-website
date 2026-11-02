@@ -1616,9 +1616,9 @@ families[0].layout = {
   ],
   how: "The electrostatic field enables all particulate matter — ferrous / non-ferrous, metallic / non-metallic, organic / inorganic, including virus and bacteria — to coalesce and deposit on collectors placed between the electrode plates.",
   steps: [
-    { icon: "dirty", title: "Contaminated Oil", sub: "0.01 micron & above" },
-    { icon: "charge", title: "Electrostatic Charging", sub: "& Coalescing" },
-    { icon: "clean", title: "Clean Oil", sub: "Return to System" },
+    { icon: "dirty", title: "Contaminated Oil", sub: "" },
+    { icon: "charge", title: "Electrostatic Field", sub: "" },
+    { icon: "clean", title: "Clean Oil", sub: "" },
   ],
   benefits: [
     { icon: "check", text: "Improves oil quality and cleanliness" },
@@ -1626,6 +1626,7 @@ families[0].layout = {
     { icon: "funnel", text: "Extends oil and component life" },
     { icon: "gauge", text: "Reduces maintenance and downtime" },
     { icon: "rupee", text: "Lower operational cost" },
+    { icon: "bolt", text: "Prevents increase in power consumption" },
   ],
 };
 
