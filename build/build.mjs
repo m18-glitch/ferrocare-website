@@ -257,6 +257,7 @@ ${pageHead({
   lead: "Machines and instruments that keep industrial oil clean — from electrostatic cleaning and vacuum dehydration to magnetic separation and oil testing.",
   crumbs: [{ label: "Products" }],
 })}
+<div class="wrap" style="margin-top:-1.5rem;margin-bottom:2rem"><a class="btn btn--primary" href="assets/docs/ferrocare-catalogue.pdf" target="_blank" rel="noopener">Download full catalogue ${icons.arrow}</a></div>
 
 <div class="filterbar">
   <div class="wrap filterbar__row">
@@ -577,6 +578,7 @@ const productTabs = (f, L) => `
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="products.html">Products</a><span>/</span><span>${f.short}</span></nav>
     <h1 data-reveal>${f.name}</h1>
+    ${L.catalogue ? `<a class="btn btn--primary mt-5" href="${L.catalogue}" target="_blank" rel="noopener" data-reveal>Download Catalogue ${icons.arrow}</a>` : ""}
     <div class="ptabs" role="tablist" aria-label="${f.name}" data-reveal data-delay="1">
       ${L.tabs.map((t, i) => `<button class="ptabs__btn${i ? "" : " is-on"}" role="tab" id="tab-${t.key}" aria-controls="panel-${t.key}" aria-selected="${!i}" data-tab="${t.key}"><span class="ptabs__thumb">${t.img ? `<img src="assets/img/${t.img}" alt="">` : PICON.dots}</span>${t.name}</button>`).join("")}
     </div>
@@ -591,7 +593,8 @@ ${L.tabs.map((t, i) => `
         <h2 class="ptab-panel__title">${t.name}</h2>
         ${t.tagline ? `<p class="ptab-panel__tag">${t.tagline}</p>` : ""}
         ${t.intro.map((p, j) => `<p class="lead mt-${j ? 4 : 5}">${p}</p>`).join("")}
-        ${t.specs ? `<dl class="pspecs mt-6">${t.specs.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>` : ""}
+        ${t.specs && !t.specsTitle ? `<dl class="pspecs mt-6">${t.specs.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>` : ""}
+        ${t.leaflet ? `<a class="btn btn--primary mt-6" href="${t.leaflet}" target="_blank" rel="noopener">Download Leaflet ${icons.arrow}</a>` : ""}
         ${t.options ? `<ol class="popts mt-6">${t.options.map((o, j) => `<li><span class="popts__l">${"ABCD"[j]}</span><span>${o}</span></li>`).join("")}</ol>` : ""}
       </div>
       ${t.img || t.images ? `<div class="pgal pgal--white" data-gal>
@@ -643,6 +646,13 @@ ${L.tabs.map((t, i) => `
         <h3>Model selection criteria depends on</h3>
         <p>${t.criteriaNote}</p>
       </aside>` : ""}
+    </div>
+  </section>` : ""}
+  ${t.specsTitle ? `
+  <section class="section section--tight">
+    <div class="wrap">
+      ${sectionHead({ title: t.specsTitle })}
+      <dl class="pspecs pspecs--wide mt-6">${t.specs.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
     </div>
   </section>` : ""}
 </div>`).join("")}

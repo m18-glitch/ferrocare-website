@@ -1600,7 +1600,7 @@ families[0].layout = {
     { img: "elc/elc-side.jpg", caption: "Side View" },
     { img: "elc/elc-front.jpg", caption: "Front View" },
   ],
-  catalogue: "https://www.ferrocare.com/_files/ugd/46b5d6_c12bdc346a1345d3b53963f08af433cc.pdf",
+  catalogue: "assets/docs/ferrocare-catalogue.pdf#page=1",
   keyStats: [
     { icon: "drop", title: "Removes", text: "contaminants < 1 micron" },
     { icon: "shield", title: "No downtime", text: "No leakage" },
@@ -1646,7 +1646,7 @@ families[1].layout = {
     { k: "Moisture", v: "< 50% sat." },
     { k: "Operates at", v: "44–60 °C" },
   ],
-  catalogue: "https://www.ferrocare.com/_files/ugd/46b5d6_9f819543c4bb4c5a9045cd97c7293ef5.pdf",
+  catalogue: "assets/docs/ferrocare-catalogue.pdf#page=2",
   keyStats: [
     { icon: "nofire", text: "Removes moisture without heating" },
     { icon: "therm", text: "Operates at low temperature" },
@@ -1674,7 +1674,7 @@ families[2].layout = {
   ],
   views: [{ img: "gearbox/gearbox-ms6.jpg", caption: "MS6 DHU" }],
   wide: true,
-  catalogue: "https://www.ferrocare.com/_files/ugd/46b5d6_c1d618bd372744788c7823eff38ad7bd.pdf",
+  catalogue: "assets/docs/ferrocare-catalogue.pdf#page=4",
   catalogueLabel: "Download Brochure",
   keyStats: [
     { icon: "magnet", title: "Removes ferrous particles", text: "Effectively captures metallic wear particles." },
@@ -1697,7 +1697,7 @@ families[3].layout = {
   ],
   views: [{ img: "magnetic/magnetix.jpg", caption: "Magnetix Separator" }],
   wide: true,
-  catalogue: "https://www.ferrocare.com/_files/ugd/46b5d6_c1d618bd372744788c7823eff38ad7bd.pdf",
+  catalogue: "assets/docs/ferrocare-catalogue.pdf#page=4",
   catalogueLabel: "Click to know more",
   features: [
     { icon: "ban", text: "With dry cake discharge, our Magnetic Separator eliminates the need for consumables, ensuring cost-effectiveness and minimal maintenance." },
@@ -1710,22 +1710,26 @@ families[3].layout = {
 /* Oil Test Equipment page — content supplied by Ferrocare (Oct 2026), shown as tabs */
 families[4].name = "Oil Test Equipment";
 families[4].layout = {
+  catalogue: "assets/docs/ferrocare-catalogue.pdf#page=3",
   tabs: [
     {
       key: "particle-counter",
       name: "Laser Particle Counters",
       intro: [
-        "A precision instrument designed to detect and analyse particles in oils, liquids and systems.",
+        "A precision instrument designed to detect and analyse particles in oils, liquids and systems. Based on laser technology — read-out in NAS / ISO / SAE codes.",
       ],
+      leaflet: "assets/docs/s120-opcom-leaflet.pdf#page=2",
       options: [
         "In a handy battery-operated carry case, to check purity directly on the machine, with print-out, plus transfer of data to your cellphone / email.",
-        "Install directly on your machines, with online display / connect via RS232 / 485 interface.",
-        "Install on our ELC equipment.",
+        "Stand-alone version for installation directly on your machine's pressure line, with or without display, with RS232 / 485 interface.",
+        "Installed on our ELC oil cleaning unit — the OPCom integrated with the ELC. Compatible with mineral-based hydraulic oils, turbine oils and compressor oils.",
       ],
       img: "oiltest/pc-opcom-hd.webp",
       images: [
         { img: "oiltest/pc-opcom-hd.webp", caption: "With OPCOM II" },
         { img: "oiltest/pc-printer-hd.webp", caption: "With printer" },
+        { img: "oiltest/opcom-inline.webp", caption: "OPCom stand-alone" },
+        { img: "oiltest/opcom-on-elc.webp", caption: "OPCom on ELC" },
       ],
       keyStats: [
         { icon: "target", text: "High Accuracy" },
@@ -1742,13 +1746,39 @@ families[4].layout = {
     {
       key: "digital-particle-counter",
       name: "Digital Particle Counter",
+      tagline: "S120 — a revolution in particle counting",
       intro: [
-        "Digital imaging particle counter (S120) that counts and identifies wear particles in oil.",
+        "Unlike laser counters, the digital image counter reads not just particulate matter in mineral, synthetic and water-based fluids, but also segregates particles into sliding wear, fibre, cutting wear, air bubbles and water droplets.",
+      ],
+      leaflet: "assets/docs/s120-opcom-leaflet.pdf#page=1",
+      options: [
+        "S120 with or without display",
+        "Portable carry case with battery backup",
+        "Printer & IoT interface",
+      ],
+      img: "oiltest/s120-lcd.webp",
+      images: [
+        { img: "oiltest/s120-lcd.webp", caption: "S120-LCD" },
+        { img: "oiltest/s120-case.webp", caption: "Portable interface with printer" },
       ],
       keyFeatures: [
+        "Oil cleanliness codes: ISO 4406, NAS 1638 & SAE AS4059",
         "Particles are grouped by micron size in seven categories — 4, 6, 14, 21, 38, 70, >100µ",
-        "The S120 counts air and gas bubbles and eliminates them from the counts",
-        "Wear particle identification as fatigue wear, sliding wear and cutting wear as well as fibres",
+        "The S120 detects air and gas bubbles and eliminates them from the counts",
+        "Shape recognition software categorises particulates into sliding, cutting & fatigue wear",
+        "Highly accurate sensor capable of self-calibration",
+        "Full integration with SCADA / PC / PLC, controlled via analogue or digital instrumentation",
+      ],
+      specsTitle: "Technical specifications",
+      specs: [
+        ["Weight", "0.5 kg"],
+        ["Max pressure", "160 bar"],
+        ["Temperature range", "-20 °C to 70 °C"],
+        ["Flow rate", "0.1 – 1.0 l/min"],
+        ["Power", "24 VDC"],
+        ["Ports", "1/8\" BSP"],
+        ["Output options", "Modbus RTU (RS485), Modbus TCP/IP, local panel-mount indicator, local field-mount indicator"],
+        ["Fluid compatibility", "Mineral oils, synthetic oils, diesel, Skydrol, water glycols — other fluids possible, contact us"],
       ],
     },
     {
