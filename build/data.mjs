@@ -83,13 +83,9 @@ export const proof = [
 /* Clients — from Ferrocare's own client listings, historical and current.
    Presented as plants supplied across four decades. */
 export const clients = [
-  "Tata Motors", "Tata Steel", "Maruti", "Bajaj Auto", "Ashok Leyland",
-  "Mahindra", "TVS", "Hero Honda", "BHEL", "NTPC", "Tata Power", "NHPC",
-  "Reliance Power", "Jindal", "Essar", "Bhushan Steel", "Vizag Steel",
-  "SAIL plants", "ACC", "L&T", "Philips", "Godrej", "Videocon", "Whirlpool",
-  "Nilkamal", "Supreme", "Cello", "Motherson", "Lumax", "HAL", "DRDO",
-  "Ordnance Factories", "Yuken", "Eaton Vickers", "Parker", "MOOG",
-  "Ferromatic", "BILT", "NITCO", "H&R Johnson",
+  "JSW Group", "AM/NS India", "Tata Power", "Tata Steel", "HAL", "Bharat Forge",
+  "Flovel", "SAIL", "Yuken", "Godrej", "Tata Motors",
+  "Jindal", "Bhushan Steel", "Nilkamal", "Supreme", "Cello", "Motherson", "Lumax",
 ];
 
 /* ==========================================================================
