@@ -1247,14 +1247,14 @@ ${pageHead({
         <p class="muted mt-3" style="font-size:var(--t-sm)">Fields marked <span class="accent-text">*</span> are required. The more detail you give about the fluid and the duty, the more precise the recommendation.</p>
 
         <!-- Relay-service control fields -->
-        <input type="hidden" name="_subject" value="${FORM.subject}">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="page" value="">
+        <input type="hidden" name="subject" value="${FORM.subject}">
+        <input type="hidden" name="access_key" value="${FORM.accessKey}">
+        <input type="hidden" name="from_name" value="Ferrocare website">
+                <input type="hidden" name="page" value="">
         <!-- Honeypot: bots fill this, people never see it -->
         <div class="hp" aria-hidden="true">
           <label for="f-website">Leave this field empty</label>
-          <input id="f-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+          <input id="f-website" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="field-row mt-6">
@@ -1346,13 +1346,13 @@ ${pageHead({
           data-subject="Website feedback form — Ferrocare Machines" data-reveal>
       <h3 style="font-size:var(--t-h4)">Feedback form</h3>
       <p class="muted mt-3" style="font-size:var(--t-sm)">Share these details about your plant and oil, and our engineers will recommend the right solution.</p>
-      <input type="hidden" name="_subject" value="Website feedback form — Ferrocare Machines">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="page" value="">
+      <input type="hidden" name="subject" value="Website feedback form — Ferrocare Machines">
+      <input type="hidden" name="access_key" value="${FORM.accessKey}">
+        <input type="hidden" name="from_name" value="Ferrocare website">
+            <input type="hidden" name="page" value="">
       <div class="hp" aria-hidden="true">
         <label for="fb-website">Leave this field empty</label>
-        <input id="fb-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+        <input id="fb-website" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
       </div>
 
       <div class="field-row mt-6">

@@ -64,8 +64,9 @@ export const company = {
        web3forms  : https://api.web3forms.com/submit            (free key)
      ------------------------------------------------------------------------ */
   form: {
-    endpoint: "https://formsubmit.co/ajax/info@ferrocare.com",
-    mode: "formsubmit",
+    endpoint: "https://api.web3forms.com/submit",
+    mode: "web3forms",
+    accessKey: "2e3c44db-c26f-463f-a951-d58bf8810ab0",
     subject: "Website enquiry — Ferrocare Machines",
     recipient: "info@ferrocare.com",
   },

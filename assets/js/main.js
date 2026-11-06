@@ -327,7 +327,7 @@
     const to = form.dataset.recipient || "info@ferrocare.com";
     const subject = form.dataset.subject || "Website enquiry";
     const body = Object.entries(fields)
-      .filter(([k]) => !k.startsWith("_"))
+      .filter(([k]) => !k.startsWith("_") && !["access_key", "from_name", "subject", "page", "replyto"].includes(k))
       .map(([k, v]) => `${k}: ${v}`)
       .join("\n");
     return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -375,8 +375,8 @@
       if (success) success.hidden = true;
       if (error) error.hidden = true;
 
-      const honey = $('input[name="_honey"]', form);
-      if (honey && honey.value.trim()) {
+      const honey = $('input[name="botcheck"]', form);
+      if (honey && honey.checked) {
         if (success) success.hidden = false;
         return;
       }
@@ -397,8 +397,8 @@
       }
 
       const data = Object.fromEntries(new FormData(form).entries());
-      delete data._honey;
-      if (data.email) data._replyto = data.email;
+      delete data.botcheck;
+      if (data.email) data.replyto = data.email;
 
       setBusy(true);
       try {
