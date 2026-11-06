@@ -407,9 +407,12 @@
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify(data),
         });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const payload = await res.json().catch(() => ({}));
-        if (payload && payload.success === "false") throw new Error("relay rejected");
+        if (!res.ok || (payload && String(payload.success) === "false")) {
+          const e = new Error(payload && payload.message ? payload.message : `HTTP ${res.status}`);
+          e.relayMessage = payload && payload.message;
+          throw e;
+        }
         form.reset();
         if (success) {
           success.hidden = false;
@@ -418,9 +421,14 @@
       } catch (err) {
         if (mailtoLink) mailtoLink.href = mailtoFallback(form, data);
         if (errorDetail) {
-          errorDetail.textContent =
-            "The form service could not be reached from this network. Use the button below and your email app will open with everything already filled in.";
+          const m = err && err.relayMessage ? String(err.relayMessage) : "";
+          errorDetail.textContent = /activat/i.test(m)
+            ? "This form is being set up and is not active yet. Please use the button below — your email app will open with everything already filled in."
+            : m
+              ? m + " You can also use the button below — your email app will open with everything already filled in."
+              : "The form service could not be reached from this network. Use the button below and your email app will open with everything already filled in.";
         }
+        if (window.console) console.warn("Form relay:", err && err.message);
         if (error) {
           error.hidden = false;
           error.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
