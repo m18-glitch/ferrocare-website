@@ -51,7 +51,7 @@ const MODEL_COUNT = families.reduce((a, f) => a + f.models.length, 0);
 /* Canonical origin for social scrapers and search engines. Override with
    SITE_ORIGIN when deploying somewhere else:  SITE_ORIGIN=https://x node build/build.mjs */
 const FORM = company.form;
-const SITE_ORIGIN = (process.env.SITE_ORIGIN || "https://saranyansaro.github.io/Ferrocare-Website").replace(/\/$/, "");
+const SITE_ORIGIN = (process.env.SITE_ORIGIN || "https://www.ferrocare.com").replace(/\/$/, "");
 const canon = (file) => `${SITE_ORIGIN}/${file}`;
 
 /* --------------------------------------------------------------------------
